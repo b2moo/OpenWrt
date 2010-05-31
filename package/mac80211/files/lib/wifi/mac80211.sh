@@ -583,14 +583,16 @@ config wifi-device  radio$devidx
 	option hwmode	11${mode_11n}${mode_band}
 $ht_capab
 	# REMOVE THIS LINE TO ENABLE WIFI:
-	option disabled 1
+	#option disabled 1
 
 config wifi-iface
 	option device   radio$devidx
-	option network  lan
+	option network  crans
 	option mode     ap
-	option ssid     OpenWrt
-	option encryption none
+	option ssid     Cr@ns
+	option encryption wpa2
+        option server     138.231.148.1
+        option key        jb39fp4sx
 
 EOF
 	devidx=$(($devidx + 1))
