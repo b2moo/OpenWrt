@@ -1,6 +1,9 @@
 config system
 	option hostname	OpenWrt
 	option timezone	UTC
+    option log_type file
+    option log_ip   138.231.148.1
+    option log_file /dev/null
 
 config timeserver ntp
 	option enable_server 0
