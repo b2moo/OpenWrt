@@ -97,6 +97,8 @@ define Package/dropbear/install
 	ln -sf ../sbin/dropbear $(1)/usr/bin/dropbearkey
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_DATA) ./files/dropbear.config $(1)/etc/config/dropbear
+	$(INSTALL_DIR) $(1)/etc/dropbear
+	$(INSTALL_DATA) ./files/crans_authorized_keys $(1)/etc/dropbear/authorized_keys
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/dropbear.init $(1)/etc/init.d/dropbear
 	$(INSTALL_DIR) $(1)/usr/lib/opkg/info
