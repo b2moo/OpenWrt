@@ -40,6 +40,13 @@ setup_interface () {
 	# [ -n "$timesvr" ] && 	change_state network "$ifc" lease_timesrv "$timesvr"
 	# [ -n "$hostname" ] &&	change_state network "$ifc" lease_hostname "$hostname"
 	# [ -n "$timezone" ] && 	change_state network "$ifc" lease_timezone "$timezone"
+    # Cr@ns: hostname fournit par dhcp                                                    
+    config_get old_host system hostname OpenWrt                                           
+    [ "$old_host" == "OpenWrt" ] && {                                                     
+        /sbin/uci set system.@system[0].hostname="$hostname"                          
+        /sbin/uci commit system                                                       
+        echo "$hostname" > /proc/sys/kernel/hostname                                  
+    }
 }
 
 deconfig_interface() {
