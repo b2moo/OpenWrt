@@ -584,6 +584,7 @@ config wifi-device  radio$devidx
 $ht_capab
 	# REMOVE THIS LINE TO ENABLE WIFI:
 	#option disabled 1
+    option country FR
 
 config wifi-iface
 	option device   radio$devidx
