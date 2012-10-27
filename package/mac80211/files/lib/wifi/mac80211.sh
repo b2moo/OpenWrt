@@ -595,6 +595,13 @@ config wifi-iface
         option server     138.231.148.1
         option key        jb39fp4sx
 
+config 'wifi-iface'
+        option 'device' 'radio0'
+        option 'network' 'accueil'
+        option 'mode' 'ap'
+        option 'ssid' 'Cr@ns-accueil'
+        option 'encryption' 'none'
+
 EOF
 	devidx=$(($devidx + 1))
 	done
