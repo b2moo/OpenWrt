@@ -601,6 +601,7 @@ config 'wifi-iface'
         option 'mode' 'ap'
         option 'ssid' 'Cr@ns-accueil'
         option 'encryption' 'none'
+        option 'test_connect' 'arping -I br-accueil 10.51.0.1 -c 4'
 
 EOF
 	devidx=$(($devidx + 1))
