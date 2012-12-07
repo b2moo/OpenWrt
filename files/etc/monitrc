@@ -16,6 +16,12 @@ set logfile syslog facility log_daemon
 ## default the file is placed in $HOME/.monit.id.
 #
 set idfile /var/.monit.id
+
+# Bind and authorize only to localhost:
+set httpd port 2812 and
+    use address localhost
+    allow localhost
+
 #
 ## Set the location of the Monit state file which saves monitoring states
 ## on each cycle. By default the file is placed in $HOME/.monit.state. If
