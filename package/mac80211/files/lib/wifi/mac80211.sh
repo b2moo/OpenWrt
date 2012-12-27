@@ -590,6 +590,8 @@ config wifi-iface
 	option device   radio$devidx
 	option network  crans
 	option mode     ap
+    option isolate  0
+    option wmm      1
 	option ssid     Cr@ns
 	option encryption wpa2
         option server     138.231.148.1
@@ -602,6 +604,8 @@ config 'wifi-iface'
         option 'ssid' 'Cr@ns-accueil'
         option 'encryption' 'none'
         option 'test_connect' 'arping -I br-accueil 10.51.0.1 -c 4'
+    option isolate  1
+    option wmm      1
 
 EOF
 	devidx=$(($devidx + 1))
