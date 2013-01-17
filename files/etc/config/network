@@ -1,0 +1,24 @@
+
+config interface loopback
+	option ifname	lo
+	option proto	static
+	option ipaddr	127.0.0.1
+	option netmask	255.0.0.0
+
+config interface debugface
+	option ifname	eth0.0
+    option type     bridge
+	option proto	static
+	option ipaddr   192.168.1.1
+	option netmask	255.255.255.0
+
+config interface crans
+	option ifname	eth0.3
+	option type 	bridge
+	option proto	dhcp
+
+config interface accueil
+    option ifname   eth0.7
+    option type     bridge
+    option proto    none
+
