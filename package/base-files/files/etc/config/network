@@ -1,4 +1,7 @@
 # Copyright (C) 2006 OpenWrt.org
+# package/base-files/files/etc/config/network
+# This file is usually removed by ar71xx and replaced
+# by one from /etc/defconfig/
 
 config interface loopback
 	option ifname	lo
@@ -10,10 +13,14 @@ config interface crans
 	option ifname	eth0.3
 	option type 	bridge
 	option proto	dhcp
-    
-#config interface 'wan'               
-#       option ifname 'eth1'
-#       option proto 'dhcp'
+
+# Debug purpose
+config interface lan
+    option ifname   eth0
+    option type     bridge
+    option proto    static
+    option ipaddr   192.168.1.1
+    option netmask  255.255.255.0
 
 config interface accueil
     option ifname   eth0.7

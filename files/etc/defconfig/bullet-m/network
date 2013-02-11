@@ -1,3 +1,5 @@
+# from defconfig
+
 
 config interface loopback
 	option ifname	lo
@@ -5,12 +7,12 @@ config interface loopback
 	option ipaddr	127.0.0.1
 	option netmask	255.0.0.0
 
-config interface debugface
-	option ifname	eth0.0
-    option type     bridge
-	option proto	static
-	option ipaddr   192.168.1.1
-	option netmask	255.255.255.0
+# Enable to debug
+#config interface lan
+#    option ifname eth0
+#    option type   bridge
+#    option ipaddr 192.168.1.1
+#    option netmask 255.255.255.0
 
 config interface crans
 	option ifname	eth0.3
