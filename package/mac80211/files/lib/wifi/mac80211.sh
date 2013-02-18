@@ -594,8 +594,10 @@ config wifi-iface
     option wmm      1
 	option ssid     Cr@ns
 	option encryption wpa2
-        option server     138.231.148.1
-        option key        jb39fp4sx
+    option server     138.231.148.11
+    option key        fill_it
+    option disabled 1
+
 
 config 'wifi-iface'
         option 'device' 'radio0'

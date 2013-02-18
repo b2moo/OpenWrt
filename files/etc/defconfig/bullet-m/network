@@ -19,6 +19,12 @@ config interface crans
 	option type 	bridge
 	option proto	dhcp
 
+config interface install
+	option ifname	eth0.10
+	option type 	bridge
+    # Change to dhcp if installed
+	option proto	none
+
 config interface accueil
     option ifname   eth0.7
     option type     bridge
