@@ -598,9 +598,19 @@ config wifi-iface
     option key        fill_it
     option disabled 1
 
+config wifi-iface
+   option device   radio$devidx
+   option network  install
+   option mode     ap
+   option isolate  0
+   option wmm      1
+   option ssid     Cr@ns-Install
+   option encryption none
+   option disabled 1
+
 
 config 'wifi-iface'
-        option 'device' 'radio0'
+        option 'device' 'radio$devidx'
         option 'network' 'accueil'
         option 'mode' 'ap'
         option 'ssid' 'Cr@ns-accueil'
