@@ -1,6 +1,6 @@
 config system
 	option hostname	OpenWrt
-	option timezone	UTC
+	option timezone	CET-1CEST
     option log_type file
 # thot.crans.org
     option log_ip   138.231.136.38
