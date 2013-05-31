@@ -896,7 +896,7 @@ $(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTAIRROUTER,ubnt-airrouter,UBNT-A
 $(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTBULLETM,ubnt-bullet-m,UBNT-BM,ttyS0,115200,XM,XM,ar7240))
 $(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTROCKETM,ubnt-rocket-m,UBNT-RM,ttyS0,115200,XM,XM,ar7240))
 $(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTNANOM,ubnt-nano-m,UBNT-NM,ttyS0,115200,XM,XM,ar7240))
-$(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTUNIFI,ubnt-unifi,UBNT-UF,ttyS0,115200,XM,XM,ar7240))
+$(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTUNIFI,ubnt-unifi,UBNT-UF,ttyS0,115200,XM,BZ,ar7240))
 $(eval $(call SingleProfile,UBNTXM,$(fs_64k),UBNTUNIFIOUTDOOR,ubnt-unifi-outdoor,UBNT-U20,ttyS0,115200,XM,XM,ar7240))
 
 $(eval $(call SingleProfile,WHRHPG300N,$(fs_64k),WHRG301N,whr-g301n,WHR-G301N,ttyS0,115200,$$(whrhpg300n_mtdlayout),WHR-G301N))
