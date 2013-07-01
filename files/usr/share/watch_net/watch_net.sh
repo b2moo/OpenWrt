@@ -38,7 +38,12 @@ set_ignore_broadcast_ssid() {
 check_ssid() {
   local iface="$1"
   config_get ssid $iface ssid default
-  config_get test_connect $iface test_connect 
+  config_get test_connect $iface test_connect
+  config_get disabled $iface disabled 0
+  [ $disabled -ne 0 ] && {
+    echo "$ssid: skipped (disabled)"
+    return
+  }
   [ -z "$test_connect" ] && {
     config_get server $iface server
     [ -z "$server" ] && {
@@ -51,7 +56,7 @@ check_ssid() {
   $test_connect &> /dev/null
   [ 0 -eq $? ] && set_ignore_broadcast_ssid "$ssid" 0 \
                || set_ignore_broadcast_ssid "$ssid" 1
-  
+
 }
 
 # TODO: find out why this causes all clients to be disconnected on the radio
