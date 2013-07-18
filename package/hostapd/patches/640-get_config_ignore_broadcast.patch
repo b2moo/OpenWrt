@@ -1,0 +1,16 @@
+--- a/hostapd/ctrl_iface.c
++++ b/hostapd/ctrl_iface.c
+@@ -799,6 +799,13 @@ static int hostapd_ctrl_iface_get_config
+ 		pos += ret;
+ 	}
+ 
++    ret = os_snprintf(pos, end - pos, "ignore_broadcast_ssid=%d\n",
++        hapd->conf->ignore_broadcast_ssid);
++
++    if (ret < 0 || ret >= end - pos)
++        return pos - buf;
++    pos += ret;
++
+ 	return pos - buf;
+ }
+ 
