@@ -14,3 +14,17 @@
  	return pos - buf;
  }
  
+@@ -864,7 +871,12 @@ static int hostapd_ctrl_iface_get(struct
+ 		if (res < 0 || (unsigned int) res >= buflen)
+ 			return -1;
+ 		return res;
+-	}
++	} else if (os_strcmp(cmd, "ignore_broadcast_ssid") == 0) {
++        res = os_snprintf(buf, buflen, "%d", hapd->conf->ignore_broadcast_ssid);
++        if (res < 0 || (unsigned int) res >= buflen)
++            return -1;
++        return res;
++    }
+ 
+ 	return -1;
+ }
